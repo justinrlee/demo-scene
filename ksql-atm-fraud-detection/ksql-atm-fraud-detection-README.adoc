@@ -308,7 +308,7 @@ SELECT ACCOUNT_ID, CUSTOMER_NAME, CUSTOMER_PHONE,
         TIMESTAMPTOSTRING(TX2_TIMESTAMP, 'HH:mm:ss') AS TX2_TS, 
         TX1_ATM, TX2_ATM, 
         DISTANCE_BETWEEN_TXN_KM, MINUTES_DIFFERENCE 
-FROM ATM_POSSIBLE_FRAUD_ENRICHED;  
+FROM ATM_POSSIBLE_FRAUD_ENRICHED EMIT CHANGES;
 ----
 
 http://localhost:5601/app/kibana#/dashboard/fraudulent-atm-transactions?_g=(refreshInterval:(pause:!f,value:30000),time:(from:now-15m,mode:quick,to:now))[Show suspect transactions in Kibana]
